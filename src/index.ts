@@ -37,6 +37,14 @@ async function handlerStart(ctx) {
   );
 }
 
+bot.command("setmenu", (ctx) =>
+  ctx.setChatMenuButton({
+    text: "Play now!",
+    type: "web_app",
+    web_app: { url: gameUrl },
+  })
+);
+
 bot.start(handlerStart);
 bot.command("game", handlerStart);
 
