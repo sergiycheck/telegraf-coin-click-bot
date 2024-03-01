@@ -15,7 +15,7 @@ const webhookDomain = process.env.WEBHOOK_DOMAIN;
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 const app = express();
-// app.use(await bot.createWebhook({ domain: webhookDomain }));
+app.use(await bot.createWebhook({ domain: webhookDomain }));
 
 const gameShortName = process.env.GAME_SHORT_NAME;
 const gameUrl = process.env.GAME_URL;
@@ -42,7 +42,7 @@ bot.command("game", handlerStart);
 
 bot.launch();
 
-// app.listen(port, () => console.log("Listening on port", port));
+app.listen(port, () => console.log("Listening on port", port));
 
 // Enable graceful stop
 process.once("SIGINT", () => bot.stop("SIGINT"));
