@@ -21,7 +21,7 @@ const gameShortName = process.env.GAME_SHORT_NAME;
 const gameUrl = process.env.GAME_URL;
 
 async function handlerStart(ctx) {
-  const pathToCoinClick = path.resolve(process.cwd(), "media/notecoin.png");
+  const pathToCoinClick = path.resolve(process.cwd(), "media/notcoin-wallpaper.png");
 
   await ctx.sendMediaGroup([
     {
@@ -32,8 +32,8 @@ async function handlerStart(ctx) {
   ]);
 
   await ctx.reply(
-    "Launch mini app from inline keyboard!",
-    Markup.inlineKeyboard([Markup.button.webApp("🎮 Play now!", gameUrl)])
+    "Launch the game and start earning!",
+    Markup.inlineKeyboard([Markup.button.webApp("❤️‍🔥", gameUrl)])
   );
 }
 
